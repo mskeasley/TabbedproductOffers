@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="TabbedproductDisplay : A tabbed flip book style to display product offers or products using javascript. This is the basic shell, just add your own images and copy. " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>TabbedproductDisplay</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mskeasley/TabbedproductOffers">View on GitHub</a>
+
+          <h1 id="project_title">TabbedproductDisplay</h1>
+          <h2 id="project_tagline">A tabbed flip book style to display product offers or products using javascript. This is the basic shell, just add your own images and copy. </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/mskeasley/TabbedproductOffers/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/mskeasley/TabbedproductOffers/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><img src="http://mskeasley.files.wordpress.com/2012/10/solutions-screen-shot-v2.png" alt="Tabbed Produc Display"></p>
+
+<p></p>
+     &lt;!-- remove this line when in wordpress --&gt;
+    
+        $(document).ready(function () {
+            // put all your jQuery goodness in here.
+            $(&amp;#39;#navTabs li a&amp;#39;).each(function () { // get each tab element
+                $(this).click(function () { // begin- if this is clicked
+                    var tabAttr = $(this).attr(&amp;quot;rel&amp;quot;); // get attribute&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                //switch navigation 
+                var $navTab = &amp;quot;#navTabs li a&amp;quot;;
+                $($navTab).removeClass(&amp;#39;active&amp;#39;);
+                $(&amp;quot;#navTabs li a[rel=&amp;#39;&amp;quot; + tabAttr + &amp;quot;&amp;#39;]&amp;quot;).addClass(&amp;#39;active&amp;#39;);
+
+
+                // switch package
+                var package = &amp;quot;.pkg&amp;quot; + tabAttr; // package class + attribute number we just clicked on
+                $(&amp;quot;.packageContent div&amp;quot;).css(&amp;#39;display&amp;#39;, &amp;#39;none&amp;#39;);
+                $(package).css(&amp;#39;display&amp;#39;, &amp;#39;block&amp;#39;); // show the one we just clicked
+
+            }); // end click
+        }); // end each
+    });
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;style type="text/css"&gt;
+
+#solutions
+{width:721px;
+ margin:15px auto;  }
+
+ #navTabs
+ { width: 720px; }    
+ 
+#navTabs ul
+{  font-family: Arial;
+   font-weight: bold;
+   text-transform: uppercase;
+    font-size: 12px;
+    background-color:#FFFFFF;
+    list-style: none outside none;
+    display: block;
+    padding: 0px 7px;}
+    
+#navTabs li 
+{  display: inline-block;
+    vertical-align: bottom;
+    margin: 3px 0px;
+    width:88px;
+    background-color: #DBF5FD;
+    height:45px; }
+
+#navTabs li .active, #navTabs li a:hover
+{background-color:#F26322;
+ border: 1px solid #666;
+ height:46px; 
+ color:#FFF; }
+
+#navTabs ul li a
+{ background: none;
+  border:none;
+  display: block;
+  color:#000;   }
+
+h3
+{color:#f26322;
+ text-transform:uppercase;
+ font-family:Arial; }
+
+.pkg1, .pkg2, .pkg3, .pkg4, .pkg5, .pkg6, .pkg7 
+{margin: 10px auto;
+ padding:10px; 
+ display:block; }
+
+
+&lt;/style&gt;
+
+&lt;p&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/p&gt;
+
+&lt;!--NAV TAB--&gt;
+
+&lt;div id="solutions"&gt;
+    &lt;div id="navTabs"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a class="active" rel="1"&gt;Packages 1&lt;/a&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;a class="" rel="2"&gt;Packages 2&lt;/a&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;a class="" rel="3"&gt;Packages 3&lt;/a&gt;
+             &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;a class="" rel="4"&gt;Packages 4&lt;/a&gt;
+             &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;a class="" rel="5"&gt;Packages 5&lt;/a&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                &lt;a class="" rel="6"&gt;Packages 6&lt;/a&gt;
+            &lt;/li&gt;
+
+            &lt;li &gt;
+                &lt;a class="" rel="7"&gt;Packages 7&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+ 
+    &lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!--end navTabs--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;div class="packageContent"&gt;
+        &amp;lt;!--- package content---&amp;gt;
+        &lt;div class="pkg1" style="display:block;"&gt;
+             &lt;h3&gt;Product Pkg 1&lt;/h3&gt;
+             &lt;p&gt;
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit lectus sit amet metus dictum fermentum. Curabitur sed lacus nec neque venenatis mattis in dignissim libero. Aliquam ornare eleifend eleifend. Aliquam nibh lectus, fringilla vitae euismod a, fermentum at turpis.
+             &lt;/p&gt;
+             &lt;p&gt;
+            Donec imperdiet tellus non ligula cursus eu facilisis urna dapibus. Curabitur sollicitudin, augue convallis tincidunt pharetra, ligula erat elementum massa, et porta nulla arcu in arcu. Vivamus rutrum mi a elit convallis non tristique felis iaculis. 
+             &lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;The core of our solution includes: Active posting for 30 days.  &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         Maecenas eu turpis at purus convallis dapibus. Vestibulum gravida, arcu a tristique suscipit, turpis nibh fringilla massa, eget suscipit tellus ligula in sapien. Nam scelerisque magna sit amet ante imperdiet ultrices. Sed at aliquam massa. Proin ut nisl nulla, ut ornare diam. Pellentesque scelerisque consequat placerat. Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+        &amp;lt;/div&amp;gt;  
+    &amp;lt;!--end pkg1--&amp;gt;
+
+    &amp;lt;div class=&amp;quot;pkg2&amp;quot; style=&amp;quot;display:none;&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Product Pkg 2&amp;lt;/h3&amp;gt;
+        &amp;lt;p&amp;gt;
+        Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est. Cras semper orci at nisi elementum sed luctus arcu commodo. Etiam eleifend arcu a mauris ultrices dictum. Duis varius urna sed lectus sagittis aliquam. Praesent tincidunt, arcu vel sollicitudin ullamcorper, neque ligula lobortis nulla, commodo ornare odio nisl a nibh. Phasellus eu nulla dui. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;p&amp;gt;
+        In a ornare libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porttitor nibh a libero ornare quis tempus nisl ultricies. Vestibulum eget neque et orci tempus tempor non a magna. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt; Curabitur hendrerit diam vel dolor tristique in feugiat mi condimentum.&amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         SAliquam pulvinar egestas lectus, vitae volutpat augue pulvinar a. Phasellus tempor urna vestibulum erat cursus sit amet dictum odio molestie. Curabitur porta malesuada ultrices. Maecenas sit amet orci in ligula ultricies consectetur in id lacus. Cras venenatis, risus a varius iaculis, nisi metus euismod sem, at adipiscing enim dolor sed urna.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+
+      &amp;lt;/div&amp;gt; 
+    &amp;lt;!--end pkg2--&amp;gt;
+
+    &amp;lt;div class=&amp;quot;pkg3&amp;quot; style=&amp;quot;display:none;&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Product Package 3&amp;lt;/h3&amp;gt;
+     &amp;lt;p&amp;gt;
+        Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est. Cras semper orci at nisi elementum sed luctus arcu commodo. Etiam eleifend arcu a mauris ultrices dictum. Duis varius urna sed lectus sagittis aliquam. Praesent tincidunt, arcu vel sollicitudin ullamcorper, neque ligula lobortis nulla, commodo ornare odio nisl a nibh. Phasellus eu nulla dui. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;p&amp;gt;
+        In a ornare libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porttitor nibh a libero ornare quis tempus nisl ultricies. Vestibulum eget neque et orci tempus tempor non a magna. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt; Curabitur hendrerit diam vel dolor tristique in feugiat mi condimentum.&amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         SAliquam pulvinar egestas lectus, vitae volutpat augue pulvinar a. Phasellus tempor urna vestibulum erat cursus sit amet dictum odio molestie. Curabitur porta malesuada ultrices. Maecenas sit amet orci in ligula ultricies consectetur in id lacus. Cras venenatis, risus a varius iaculis, nisi metus euismod sem, at adipiscing enim dolor sed urna.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+
+      &amp;lt;/div&amp;gt;
+     &amp;lt;!--end pkg3--&amp;gt;
+
+    &amp;lt;div class=&amp;quot;pkg4&amp;quot; style=&amp;quot;display:none;&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Offers Packages 4&amp;lt;/h3&amp;gt;
+    &amp;lt;p&amp;gt;
+        Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est. Cras semper orci at nisi elementum sed luctus arcu commodo. Etiam eleifend arcu a mauris ultrices dictum. Duis varius urna sed lectus sagittis aliquam. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;p&amp;gt;
+        In a ornare libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porttitor nibh a libero ornare quis tempus nisl ultricies. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt; Curabitur hendrerit diam vel dolor tristique in feugiat mi condimentum.&amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         SAliquam pulvinar egestas lectus, vitae volutpat augue pulvinar a. Phasellus tempor urna vestibulum erat cursus sit amet dictum odio molestie. Curabitur porta malesuada ultrices. Maecenas sit amet orci in ligula ultricies consectetur in id lacus. Cras venenatis, risus a varius iaculis, nisi metus euismod sem, at adipiscing enim dolor sed urna.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+
+      &amp;lt;/div&amp;gt;
+     &amp;lt;!--end pkg4--&amp;gt;
+
+    &amp;lt;div class=&amp;quot;pkg5&amp;quot; style=&amp;quot;display:none;&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Offer Pkg 5&amp;lt;/h3&amp;gt;
+    &amp;lt;p&amp;gt;
+        Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est. Cras semper orci at nisi elementum sed luctus arcu commodo. Etiam eleifend arcu a mauris ultrices dictum. Duis varius urna sed lectus sagittis aliquam. Praesent tincidunt, arcu vel sollicitudin ullamcorper, neque ligula lobortis nulla, commodo ornare odio nisl a nibh. Phasellus eu nulla dui. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;p&amp;gt;
+        In a ornare libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porttitor nibh a libero ornare quis tempus nisl ultricies. Vestibulum eget neque et orci tempus tempor non a magna. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt; Curabitur hendrerit diam vel dolor tristique in feugiat mi condimentum.&amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         SAliquam pulvinar egestas lectus, vitae volutpat augue pulvinar a. Phasellus tempor urna vestibulum erat cursus sit amet dictum odio molestie. Curabitur porta malesuada ultrices. Maecenas sit amet orci in ligula ultricies consectetur in id lacus. Cras venenatis, risus a varius iaculis, nisi metus euismod sem, at adipiscing enim dolor sed urna.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+
+      &amp;lt;/div&amp;gt;
+     &amp;lt;!--end pkg5--&amp;gt;
+
+    &amp;lt;div class=&amp;quot;pkg6&amp;quot; style=&amp;quot;display:none;&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Product Pkg 6&amp;lt;/h3&amp;gt;
+    &amp;lt;p&amp;gt;
+        Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est. Cras semper orci at nisi elementum sed luctus arcu commodo. Etiam eleifend arcu a mauris ultrices dictum. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;p&amp;gt;
+        In a ornare libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porttitor nibh a libero ornare quis tempus nisl ultricies. Vestibulum eget neque et orci tempus tempor non a magna. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt; Curabitur hendrerit diam vel dolor tristique in.&amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         SAliquam pulvinar egestas lectus, vitae volutpat augue pulvinar a. Phasellus tempor urna vestibulum erat cursus sit amet dictum odio molestie. Curabitur porta malesuada ultrices. Maecenas sit amet orci in ligula ultricies consectetur in id lacus. Cras venenatis, risus a varius iaculis, nisi metus euismod sem, at adipiscing enim dolor sed urna.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+
+      &amp;lt;/div&amp;gt;
+     &amp;lt;!--end pkg6--&amp;gt;
+
+    &amp;lt;div class=&amp;quot;pkg7&amp;quot; style=&amp;quot;display:none;&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Incentive Pkg 7&amp;lt;/h3&amp;gt;
+     &amp;lt;p&amp;gt;
+        Aliquam aliquam, eros quis convallis consequat, lorem ipsum consectetur nisl, nec cursus erat odio ut nibh. Mauris urna nibh, sagittis eget varius sit amet, ultricies suscipit est. Cras semper orci at nisi elementum sed luctus arcu commodo. Etiam eleifend arcu a mauris ultrices dictum. Duis varius urna sed lectus sagittis aliquam. Praesent tincidunt, arcu vel sollicitudin ullamcorper, neque ligula lobortis nulla, commodo ornare odio nisl a nibh. Phasellus eu nulla dui. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;p&amp;gt;
+        In a ornare libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec porttitor nibh a libero ornare quis tempus nisl ultricies. 
+         &amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width: 680px;&amp;quot; /&amp;gt;
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt; Curabitur hendrerit diam vel dolor tristique in feugiat mi condimentum. Vestibulum eget neque et orci tempus tempor non a magna.&amp;lt;/p&amp;gt;
+         &amp;lt;img src=&amp;quot;[insert image]&amp;quot; style=&amp;quot;width:300px;&amp;quot; /&amp;gt;
+
+         &amp;lt;h3&amp;gt;More Info&amp;lt;/h3&amp;gt;
+         &amp;lt;p&amp;gt;
+         SAliquam pulvinar egestas lectus, vitae volutpat augue pulvinar a. Phasellus tempor urna vestibulum erat cursus sit amet dictum odio molestie. Curabitur porta malesuada ultrices. Maecenas sit amet orci in ligula ultricies consectetur in id lacus. Cras venenatis, risus a varius iaculis, nisi metus euismod sem, at adipiscing enim dolor sed urna.  [...]
+         &amp;lt;/p&amp;gt;
+         &amp;lt;a href=&amp;quot;&amp;quot;&amp;gt;&amp;gt; See More&amp;lt;/See&amp;gt;&amp;lt;/a&amp;gt;
+
+      &amp;lt;/div&amp;gt;
+     &amp;lt;!--end pkg7--&amp;gt;
+
+
+&amp;lt;/div&amp;gt;&amp;lt;!--end packageContent--&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/div&gt;&amp;lt;!--end solutions--&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/body&gt;&lt;/p&gt;
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">TabbedproductDisplay maintained by <a href="https://github.com/mskeasley">mskeasley</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
